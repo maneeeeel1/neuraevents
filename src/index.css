@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+body nav{
+    font-family: 'Rowdies';
+}
+
+body footer h3{
+    font-family: 'Rowdies';
+}
+
+body footer button{
+    font-family: 'Rowdies';
+}
+
+body {
+    font-family: 'Oswald';
+
+}
