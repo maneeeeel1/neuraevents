@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const VipChat = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const VipChat = () => {
         }))];
 
         try {
-            const iaResponse = await fetch('http://localhost:8000/api/chat/chat', {
+            const iaResponse = await fetch(`${API_URL}/chat/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ mensajes: apiMessages }),
@@ -67,7 +68,7 @@ const VipChat = () => {
                         cantidad: 1
                     });
 
-                    await fetch('http://localhost:8000/api/solicitudes/vip', {
+                    await fetch(`${API_URL}/solicitudes/vip`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
